@@ -27,11 +27,11 @@
 #La classe suivante permet de calculer la moyenne des entiers passés en paramètres au programme.
 #Il est demandé de gérer les exceptions NumberFormatException et ArithmeticException dans
 #la méthode main.
-#
+
 #Rappel:
- #x / 0 pas bien du tout...
+#x / 0 pas bien du tout...
 #SOURCE DE LA CLASSE SANS LES EXCEPTIONS
-#
+
 #package moyenneException;
 #public class MoyenneException{
 #public static void main(String[] argv) {
@@ -39,11 +39,11 @@
 #System.out.println("Il n'y a pas d'arguments");
 #System.exit(1);
 #}
-#
+
 #int moyenne = moyenne(argv);
 #System.out.println("La moyenne est " + moyenne);
 #}
-#
+
 #public static int moyenne(String[] argv) {
 #int somme = 0;
 #int cpt = 0;
@@ -51,14 +51,12 @@
 #somme += Integer.parseInt(argv[i]);
 #cpt++;
 #}
-#
+
 #return somme / cpt;
-#
+
 #}
 
 #}
-#
-
 
 #Exercice 2: Racine
 #Il s'agit d'écrire une classe servant à calculer la racine carrée d'un nombre réel de type double.
@@ -70,13 +68,13 @@
 #• Dans le cas d'un opérande négatif, on lancera une exception de la classe définie depuis
 #l'intérieur de la méthode racine de la classe Racine. Cette erreur ne sera pas attrapée par la
 #méthode racine mais le sera dans la méthode main qui utilise la méthode calcule.
-#
+
 #SOURCES DES CLASSES SANS LES EXCEPTIONS
-#
+
 #public class Racine
 #{
 # private double precision;
-#
+
 # Racine(double precision)
 # {
 # this.precision=precision;
@@ -86,53 +84,53 @@
 # double solution, carre, a, b;
 # a=0;
 # b=operande;
- #solution=(a+b)/2;
- #while(b-a>precision)
+#solution=(a+b)/2;
+#while(b-a>precision)
 #{
- #carre=solution*solution;
- #if (carre>operande) b=solution;
- #else a=solution;
- #solution=(a+b)/2;
+#carre=solution*solution;
+#if (carre>operande) b=solution;
+#else a=solution;
+#solution=(a+b)/2;
 #}
- #return solution;
- #}
-#
- #double getPrecision() { return precision; }
- #void setPrecision(double precision) { this.precision=precision; }
+#return solution;
 #}
-#
+
+#double getPrecision() { return precision; }
+#void setPrecision(double precision) { this.precision=precision; }
+#}
+
 #public class UtiliseRacine
 #{
 # public static void main(String[] argv)
- #{
- #Racine extracteur = new Racine(0.01);
- #double operande= (Double.valueOf(argv[0])).doubleValue();
- #double valeurRacine;
- #valeurRacine=extracteur.racine(operande);
- #System.out.println(valeurRacine);
- #System.out.println("precision "+extracteur.getPrecision() + " , erreur =" +
+#{
+#Racine extracteur = new Racine(0.01);
+#double operande= (Double.valueOf(argv[0])).doubleValue();
+#double valeurRacine;
+#valeurRacine=extracteur.racine(operande);
+#System.out.println(valeurRacine);
+#System.out.println("precision "+extracteur.getPrecision() + " , erreur =" +
 #(valeurRacine-Math.sqrt(operande)));
- #extracteur.setPrecision(0.00001);
- #valeurRacine=extracteur.racine(operande);
- #System.out.println(valeurRacine);
- #System.out.println("precision "+extracteur.getPrecision() + " , erreur =" +
+#extracteur.setPrecision(0.00001);
+#valeurRacine=extracteur.racine(operande);
+#System.out.println(valeurRacine);
+#System.out.println("precision "+extracteur.getPrecision() + " , erreur =" +
 #(valeurRacine-Math.sqrt(operande)));
-#
- #}
-#
+
 #}
-#
+
+#}
+
 #On obtient :
-#
+
 #6.55865478515625
-#
+
 #precision 0.01 , erreur =0.00121626085424964
 #6.557437360286713
 #precision 1.0E-5 , erreur =-1.1640152877134824E-6
-#
+
 #
 #Partie B: retour sur le TP3 et l'interface Condition
-#
+
 #1) Créer une nouvelle classe ExceptionArgumentIncorrect sans attribut qui ne contient que
 #le constructeur transmettant son paramètre message de type String au constructeur de sa
 #super-classe.
@@ -142,4 +140,5 @@
 #Que faut-il ajouter à la signature du constructeur pour ne pas avoir d'erreur de compilation?
 #3) Dans la classe TestConditions, afficher l'exception + ''Pas de comptage possible.'' lorsque
 #l'exception se produit, et dans ce cas, n'effectuer aucun comptage.
-#
+
+
